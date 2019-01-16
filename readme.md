@@ -1,1 +1,0 @@
-# GithubFinder by Razine Tarik. The source code is licensed MIT.
