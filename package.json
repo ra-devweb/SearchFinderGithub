@@ -1,0 +1,14 @@
+{
+  "name": "9",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pug": "pug index.pug -w -P"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "pug": "^2.0.3"
+  }
+}
