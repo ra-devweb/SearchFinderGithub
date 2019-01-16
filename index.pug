@@ -49,20 +49,17 @@ html(lang="en")
                         p.subtitle Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, distinctio?
 
                     .hero-foot
-                        form(class="field has-addons" style="padding-bottom: 2rem   ")
+                        div(class="field has-addons" style="padding-bottom: 2rem   ")
                             div(class="control has-icons-left is-expanded")
-                                input(type="text" class="input is-large" placeholder="Search profile")
+                                input(type="text" id="searchUser" class="input is-large" placeholder="Search profile")
                                 span(class="icon is-medium is-left")
                                     <i class="fas fa-search fa-lg"></i>
-
-                            div(class="control")
-                                button(type="submit" class="button is-large is-primary") Go!
 
         main
 
             section(style="margin-top: 5rem; margin-bottom: 5rem")
                 .container
-                    .content.is-large
+                    div(class="content is-large" id="profile")
                         h1 Results
 
 
@@ -74,6 +71,7 @@ html(lang="en")
                         a(href="http://opensource.org/licenses/mit-license.php" target="_blank") MIT.
 
         script(src="github.js")
+        script(src="ui.js")
         script(src="index.js")
         script.
             // Toggle burger menu
