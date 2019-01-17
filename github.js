@@ -1,4 +1,4 @@
-// Github Constructor
+// Github api
 
 class Github {
 

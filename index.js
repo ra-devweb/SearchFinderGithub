@@ -4,9 +4,13 @@ const id        =   '8775de41cceb4c72188a';
 
 const secret    =   '9a0a4073bdf157733591f1ab21821e5f320e34a7';
 
-// init constructor Github
+// Init class Github
 
 const github    =   new Github(id, secret);
+
+// Init profile UI
+
+const ui        =  new UI();
 
 // Search input
 
@@ -32,7 +36,7 @@ searchUser.addEventListener('keyup', (e) => {
                 } else {
 
                     // Show profile
-                    console.log(':) User Found');
+                    ui.showProfile(data.profile);
 
                 }
             })
