@@ -8,6 +8,8 @@ class UI {
 
     }
 
+    // display profile in ui
+
     showProfile(user) {
 
         this.profile.innerHTML  =   `
@@ -33,25 +35,25 @@ class UI {
                                 <div class="control">
                                     <div class="tags has-addons">
                                         <span class="tag is-dark">Public Repos:</span>
-                                        <span class="tag is-info">${user.public_repos}</span>
+                                        <span class="tag is-link">${user.public_repos}</span>
                                     </div>
                                 </div>
                                 <div class="control">
                                     <div class="tags has-addons">
                                         <span class="tag is-dark">Public Gists:</span>
-                                        <span class="tag is-warning">${user.public_gists}</span>
+                                        <span class="tag is-link">${user.public_gists}</span>
                                     </div>
                                 </div>
                                 <div class="control">
                                     <div class="tags has-addons">
                                         <span class="tag is-dark">Followers:</span>
-                                        <span class="tag is-success">${user.followers}</span>
+                                        <span class="tag is-link">${user.followers}</span>
                                     </div>
                                 </div>
                                 <div class="control">
                                     <div class="tags has-addons">
                                         <span class="tag is-dark">Following:</span>
-                                        <span class="tag is-primary">${user.following}</span>
+                                        <span class="tag is-link">${user.following}</span>
                                     </div>
                                 </div>
                             </div>
@@ -90,27 +92,135 @@ class UI {
                 
                 </div>
 
-                <div class="card-footer">
-                
+                <hr>
+
+                <div class="card-header">
+
                     <div class="card-header-title is-centered">
                         <p class="title">
                             Latest Repos
                         </p>
+                        <br><br>
                     </div>
                 
                 </div>
 
-                <div class="card-footer">
+                <br>
 
-                    <div class="card-content" id="repo">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-                    </div>
-                
-                </div>
+                <div id="repo"></div>
 
             </div>
 
         `;
+
+    }
+
+    showRepos(repos) {
+
+        let output  =   '';
+
+        repos.forEach(function(repo) {
+
+            output += `
+                
+                <div class="columns">
+                
+                    <div class="column is-half">
+                        <div class="card-content">
+                            <a href="${repo.html_url}" target="_blank" class="title">
+                                ${repo.name}
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="column is-half">
+                        <div class="tags has-addons">
+                            <span class="tag is-dark">Stars :</span>
+                            <span class="tag is-link">${repo.stargazers_count}</span>
+                        </div>
+                        <div class="tags has-addons">
+                            <span class="tag is-dark">Watchers :</span>
+                            <span class="tag is-link">${repo.watchers_count}</span>
+                        </div>
+                        <div class="tags has-addons">
+                            <span class="tag is-dark">Forks :</span>
+                            <span class="tag is-link">${repo.forks_count}</span>
+                        </div>
+                    </div>
+                
+                </div>
+
+                <hr class="hr-repos">
+            
+            `;
+            
+        });
+
+        document.getElementById('repo').innerHTML    =   output;
+
+    }
+
+    // Show alert if profile don't found in ui
+
+    showAlert(message, className) {
+
+        // Clear any remainning alert
+
+        this.clearAlert();
+
+        // Create article for message alert
+
+        const article   =   document.createElement('article');
+
+        article.className   =   className;
+
+        const output    =   `
+
+            <div class="message-header">
+                <p>Alert</p>
+            </div>
+            <div class="message-body is-centered">
+                ${message}
+            </div>
+        
+        `;
+
+        article.innerHTML   =   output;
+
+        const result    =   document.querySelector('.result');
+
+        const profileResult =   document.querySelector('#profile');
+
+
+        // insert article before profile results
+
+        result.insertBefore(article, profileResult);
+
+        // remove alert after 3sec if the profile found
+
+        setTimeout(() => { this.clearAlert();  }, 3000);
+
+    }
+
+    // Clear alert Message
+
+    clearAlert() {
+
+        const alertMessage  =   document.querySelector('.is-danger');
+
+        if(alertMessage) {
+
+            alertMessage.remove();
+
+        }
+
+    }
+
+    // Clear the profile ui
+
+    clearProfile() {
+
+        this.profile.innerHTML  =   '';
 
     }
 
