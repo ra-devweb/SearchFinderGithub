@@ -28,6 +28,23 @@ class UI {
                 </div>
             
                 <div class="columns">
+
+                    <div class="column is-two-fifths">
+                        <div style="margin: 1rem" class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="${user.avatar_url}" alt="Profile image">
+                            </figure>
+                        </div>
+                        <br>
+                        <div style="margin-right: 1rem; margin-left: 1rem">
+                            <a target="_blank" class="button is-large is-link is-fullwidth" href="${user.html_url}">
+                                <span class="icon is-medium">
+                                    <i class="fab fa-github"></i>
+                                </span>
+                                <span>Visite profile</span>
+                            </a>
+                        </div>
+                    </div>
                 
                     <div class="column is-three-fifths">
                         <div class="card-content">
@@ -70,23 +87,6 @@ class UI {
                                 </ul>
                             
                             </aside>
-                        </div>
-                    </div>
-
-                    <div class="column is-two-fifths">
-                        <div style="margin: 1rem" class="card-image">
-                            <figure class="image is-4by3">
-                                <img src="${user.avatar_url}" alt="Profile image">
-                            </figure>
-                        </div>
-                        <br>
-                        <div style="margin-right: 1rem; margin-left: 1rem">
-                            <a target="_blank" class="button is-large is-link is-fullwidth" href="${user.html_url}">
-                                <span class="icon is-medium">
-                                    <i class="fab fa-github"></i>
-                                </span>
-                                <span>Visite profile</span>
-                            </a>
                         </div>
                     </div>
                 
