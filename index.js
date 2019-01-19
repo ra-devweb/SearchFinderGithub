@@ -10,6 +10,8 @@ const getIdAndSecretKeys    =  async () => {
 
 }
 
+getIdAndSecretKeys();
+
 // Init class Github
 
 const github    =  new Github();
