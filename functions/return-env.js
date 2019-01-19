@@ -7,6 +7,6 @@ exports.handler = function(event, context, callback) {
     // Amazon callback function without any custom headers
     callback(null, {
       statusCode: 200,
-      body: JSON.stringify({ token: ID, SECRET }),
+      body: JSON.stringify({ ID, SECRET }),
     });
   };

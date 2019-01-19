@@ -1,4 +1,19 @@
-// Personnel github keys 
+// Get lambda variables
+
+const getIdAndSecretKeys    =  async (url) => {
+
+    const response  =   await fetch(url);
+
+    const resIdSecret   =  await response.json();
+    
+    return resIdSecret;
+
+}
+
+const url   =   '/.netlify/functions/return-env';
+
+getIdAndSecretKeys(url)
+    .then(data => console.log(data.ID, data.SECRET));
 
 const id        =   '8775de41cceb4c72188a';
 
