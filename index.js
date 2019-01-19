@@ -12,22 +12,22 @@ const getIdAndSecretKeys    =  async (url) => {
 
 const url   =   '/.netlify/functions/return-env';
 
-
+let connection;
 
 // Init class Github
 
-const github    =   getIdAndSecretKeys(url)
-                        .then(data => {
+getIdAndSecretKeys(url)
+    .then(data => {
 
-                            const id        = data.id;
+        const id        = data.id;
 
-                            const secret    =   data.secret;
+        const secret    =   data.secret;
 
-                            return new Github(id, secret);
+        return connection = new Github(id, secret);
 
-                        });
+    });
 
-console.log(github.getIdAndSecretKeys());
+console.log(connection);
 
 // Init profile UI
 
