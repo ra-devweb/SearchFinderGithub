@@ -4,11 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "pug": "pug index.pug -w -P"
+    "pug": "pug index.pug -w -P",
+    "lambda-serve": "netlify-lambda serve functions",
+    "lambda-build": "netlify-lambda build functions"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "pug": "^2.0.3"
+  },
+  "dependencies": {
+    "netlify-lambda": "^1.2.0"
   }
 }
