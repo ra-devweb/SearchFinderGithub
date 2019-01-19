@@ -12,29 +12,20 @@ const getIdAndSecretKeys    =  async (url) => {
 
 const url   =   '/.netlify/functions/return-env';
 
-getIdAndSecretKeys(url)
-    .then(data => {
 
-        const id        = data.id;
-
-        const secret    =   data.secret;
-
-        return new Github(id, secret);
-    
-    });
-
-/* 
-***
-*** If you want to entre manualy your keys please comment getIdAndSecretKeys function
-*** and enter the id key and secret to new Github(id, secret) 
-***
-*/
 
 // Init class Github
 
-const github    =   new Github();
+const github    =   getIdAndSecretKeys(url)
+                        .then(data => {
 
-console.log(github);
+                            const id        = data.id;
+
+                            const secret    =   data.secret;
+
+                            return new Github(id, secret);
+
+                        });
 
 // Init profile UI
 
