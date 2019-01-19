@@ -1,33 +1,18 @@
 // Get lambda variables method if you have netlify variables
 
-const getIdAndSecretKeys    =  async (url) => {
+const getIdAndSecretKeys    =  async () => {
 
-    const response  =   await fetch(url);
+    const response  =   await fetch('/.netlify/functions/return-env');
 
     const resIdSecret   =  await response.json();
     
-    return resIdSecret;
+    console.log(resIdSecret.id);
 
 }
 
-const url   =   '/.netlify/functions/return-env';
-
-let connection;
-
-getIdAndSecretKeys(url)
-    .then(data => {
-
-        const id        = data.id;
-
-        const secret    =   data.secret;
-
-        return connection += new Github(id, secret);
-
-    });
-
 // Init class Github
 
-const github    =   connection;
+const github    =  new Github();
 
 console.log(github);
 
