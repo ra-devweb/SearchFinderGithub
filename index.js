@@ -60,4 +60,6 @@ const getIdAndSecretKeys    =  async () => {
 
 }
 
-getIdAndSecretKeys()
+// Call the function
+
+getIdAndSecretKeys();
