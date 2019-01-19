@@ -17,9 +17,9 @@ getIdAndSecretKeys(url)
 
         const id        = data.ID;
 
-        const secret    =   data.secret;
+        const secret    =   data.SECRET;
 
-        return new Github(id, secret);
+        console.log(id, secret);
     
     });
 
