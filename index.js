@@ -14,8 +14,6 @@ const url   =   '/.netlify/functions/return-env';
 
 let connection;
 
-// Init class Github
-
 getIdAndSecretKeys(url)
     .then(data => {
 
@@ -23,11 +21,15 @@ getIdAndSecretKeys(url)
 
         const secret    =   data.secret;
 
-        return connection = new Github(id, secret);
+        return connection += new Github(id, secret);
 
     });
 
-console.log(connection);
+// Init class Github
+
+const github    =   connection;
+
+console.log(github);
 
 // Init profile UI
 
