@@ -6,15 +6,13 @@ const getIdAndSecretKeys    =  async () => {
 
     const resIdSecret   =  await response.json();
     
-    return resIdSecret;
+    return {resIdSecret.id, resIdSecret.secret}
 
 }
 
-getIdAndSecretKeys();
-
 // Init class Github
 
-const github    =  new Github(resIdSecret.id, resIdSecret.secret);
+const github    =  new Github(getIdAndSecretKeys());
 
 console.log(github);
 
