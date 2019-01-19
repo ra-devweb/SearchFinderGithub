@@ -10,6 +10,8 @@ const getIdAndSecretKeys    =  async () => {
 
     const github    =  new Github(resIdSecret.id, resIdSecret.secret);
 
+    console.log(github);
+
     // Init profile UI
 
     const ui        =  new UI();
