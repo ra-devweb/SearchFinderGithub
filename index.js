@@ -15,9 +15,9 @@ const url   =   '/.netlify/functions/return-env';
 getIdAndSecretKeys(url)
     .then(data => {
 
-        const id        = data.ID;
+        const id        = data.id;
 
-        const secret    =   data.SECRET;
+        const secret    =   data.secret;
 
         console.log(id, secret);
     
