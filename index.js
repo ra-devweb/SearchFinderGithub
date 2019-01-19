@@ -1,4 +1,4 @@
-// Get lambda variables
+// Get lambda variables method if you have netlify variables
 
 const getIdAndSecretKeys    =  async (url) => {
 
@@ -22,6 +22,13 @@ getIdAndSecretKeys(url)
         return new Github(id, secret);
     
     });
+
+/* 
+***
+*** If you want to entre manualy your keys please comment getIdAndSecretKeys function
+*** and enter the id key and secret to new Github(id, secret) 
+***
+*/
 
 // Init class Github
 
