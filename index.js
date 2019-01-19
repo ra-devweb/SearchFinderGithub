@@ -27,7 +27,7 @@ const github    =   getIdAndSecretKeys(url)
 
                         });
 
-console.log(github.data);
+console.log(github.getIdAndSecretKeys());
 
 // Init profile UI
 
