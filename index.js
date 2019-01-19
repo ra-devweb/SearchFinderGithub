@@ -19,7 +19,13 @@ const getU  =   getIdAndSecretKeys(url)
 
         const secret    =   data.secret;
 
-        return id, secret;
+        return {
+            
+            id,
+            
+            secret
+        
+        }
     
     });
 
