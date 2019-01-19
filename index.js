@@ -34,7 +34,7 @@ getIdAndSecretKeys(url)
 
 const github    =   new Github();
 
-console.log(github);
+console.log(getIdAndSecretKeys());
 
 // Init profile UI
 
