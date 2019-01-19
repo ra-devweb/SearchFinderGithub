@@ -13,11 +13,17 @@ const getIdAndSecretKeys    =  async (url) => {
 const url   =   '/.netlify/functions/return-env';
 
 getIdAndSecretKeys(url)
-    .then(data => console.log(data.ID, data.SECRET));
+    .then(data => {
 
-const id        =   '8775de41cceb4c72188a';
+        const id        = data.ID;
 
-const secret    =   '9a0a4073bdf157733591f1ab21821e5f320e34a7';
+        const secret    =   data.secret;
+    
+    });
+
+// const id        =   '8775de41cceb4c72188a';
+
+// const secret    =   '9a0a4073bdf157733591f1ab21821e5f320e34a7';
 
 // Init class Github
 
