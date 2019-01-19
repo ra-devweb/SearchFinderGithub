@@ -30,8 +30,6 @@ class Github {
         
         }
 
-        console.log(this.clientSecret, this.clientID);
-
     }
 
 }
