@@ -12,7 +12,7 @@ const getIdAndSecretKeys    =  async (url) => {
 
 const url   =   '/.netlify/functions/return-env';
 
-const getU  = getIdAndSecretKeys(url)
+getIdAndSecretKeys(url)
     .then(data => {
 
         const id        = data.id;
@@ -32,7 +32,7 @@ const getU  = getIdAndSecretKeys(url)
 
 // Init class Github
 
-const github    =   getU();
+const github    =   getIdAndSecretKeys();
 
 console.log(github);
 
