@@ -38,7 +38,7 @@ const getU  =   getIdAndSecretKeys(url)
 
 // Init class Github
 
-const github    =   new Github(getU);
+const github    =   new Github(getU(data.id, data.secret);
 
 console.log(github);
 
